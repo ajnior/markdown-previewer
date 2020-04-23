@@ -3,14 +3,15 @@ import Marked from 'marked';
 import ReactHtmlParser from 'react-html-parser';
 import { EditorContext } from '../../contexts/EditorContext';
 
-function Preview({ html: htmlString }) {
-  const { html } = useContext(EditorContext);
+function Preview() {
+  const { editorValue } = useContext(EditorContext);
 
-  const htmlToBeParsed = Marked(html);
+  const parsedMarkdown = Marked(editorValue);
 
   return (
     <div id="preview">
-      <div>{ReactHtmlParser(htmlToBeParsed)}</div>
+      <h1>Preview</h1>
+      <div>{ReactHtmlParser(parsedMarkdown)}</div>
     </div>
   );
 }
