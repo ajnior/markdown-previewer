@@ -9,9 +9,9 @@ function Preview() {
   const parsedMarkdown = Marked(editorValue);
 
   return (
-    <div id="preview">
+    <div>
       <h1>Preview</h1>
-      <div>{ReactHtmlParser(parsedMarkdown)}</div>
+      <div id="preview">{ReactHtmlParser(parsedMarkdown)}</div>
     </div>
   );
 }
