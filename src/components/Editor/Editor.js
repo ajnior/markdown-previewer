@@ -1,19 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { EditorContext } from '../../contexts/EditorContext';
+
+import EditorHeader from '../EditorHeader/EditorHeader';
+
+import { Wrapper, TextArea } from './styles';
 
 function Editor() {
   const { editorValue, handleUserInput } = useContext(EditorContext);
 
   return (
-    <div>
-      <h1>Markdown Editor</h1>
-      <textarea
+    <Wrapper className="editor">
+      <EditorHeader title="Markdown" />
+      <TextArea
         id="editor"
         defaultValue={editorValue}
         onChange={(e) => handleUserInput(e.target.value)}
       />
-      <div></div>
-    </div>
+    </Wrapper>
   );
 }
 

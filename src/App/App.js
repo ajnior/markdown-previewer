@@ -4,14 +4,19 @@ import Preview from '../components/Preview';
 
 import { EditorContextProvider } from '../contexts/EditorContext';
 
+import '../styles/_normalize.css';
+import '../styles/_base.css';
+
+import { Wrapper } from './styles';
+
 function App() {
   return (
-    <div className="App">
+    <Wrapper className="App">
       <EditorContextProvider>
         <Editor />
         <Preview />
       </EditorContextProvider>
-    </div>
+    </Wrapper>
   );
 }
 

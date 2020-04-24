@@ -1,9 +1,4 @@
-import React, { useState } from 'react';
-
-const EditorContext = React.createContext('');
-
-const defaultMarkdown = `# Markdown Previewer
-
+const defaultValue = `
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
@@ -183,23 +178,4 @@ MIT
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
 `;
 
-function EditorContextProvider(props) {
-  const [editorValue, setEditorValue] = useState(defaultMarkdown);
-
-  function handleUserInput(value) {
-    setEditorValue(value);
-  }
-
-  const contextValue = {
-    editorValue,
-    handleUserInput,
-  };
-
-  return (
-    <EditorContext.Provider value={contextValue}>
-      {props.children}
-    </EditorContext.Provider>
-  );
-}
-
-export { EditorContextProvider, EditorContext };
+export default defaultValue;
